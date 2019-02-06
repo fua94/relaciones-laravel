@@ -8,6 +8,6 @@ use App\Models\Student;
 class StudentController extends Controller
 {
     public function index(){
-        return student::with(['subjects', 'card', 'city'])->get();
+        return Student::with(['subjects', 'card', 'city'])->get();
     }
 }

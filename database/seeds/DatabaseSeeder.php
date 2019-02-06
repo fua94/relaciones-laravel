@@ -57,18 +57,16 @@ class DatabaseSeeder extends Seeder
             'student_id' => 1
         ]);
 
-        //MANY TO MANY
-        //$student->subjects()->attach(2); //asigna
-        //$student->subjects()->dettach(2); //desasigna
-
+        /*MANY TO MANY
+        $student->subjects()->attach(2); //asigna
+        $student->subjects()->dettach(2); //desasigna
         $student->subjects()->sync([1,2]); //asignacion masiva
+         $student->subjects()->save(new Subject([
+            'name' => 'Quimica',
+            'code' => 'QUI1'
+        ])); //creacion y asignacion
 
-        // $student->subjects()->save(new Subject([
-        //     'name' => 'Quimica',
-        //     'code' => 'QUI1'
-        // ])); //creacion y asignacion
-
-        //ONE TO MANY
-        //$user->account()->associate($account); $user->save();
+        ONE TO MANY
+        $user->account()->associate($account); $user->save();*/
     }
 }
