@@ -27,4 +27,12 @@ class Student extends Model
             'student_id',
             'subject_id');
     }
+
+    public function posts(){
+        return $this->morphMany('App\Models\Post', 'post');
+    }
+
+    public function address(){
+        return $this->morphOne('App\Models\Address', 'address');
+    }
 }

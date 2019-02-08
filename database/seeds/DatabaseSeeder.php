@@ -6,6 +6,8 @@ use App\Models\Card;
 use App\Models\City;
 use App\Models\Student;
 use App\Models\Subject;
+use App\Models\Address;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,12 +51,26 @@ class DatabaseSeeder extends Seeder
             'code' => 'ALG1'
         ]);
 
-        $student = Student::find(1);
-        $student->subjects()->sync([1,2]);
-
         Card::create([
             'code' => 'C-001',
             'student_id' => 1
+        ]);
+
+        $student = Student::find(1);
+        $student->subjects()->sync([1,2]);
+
+        $student->address()->create([
+            'address_line_1' => 'Monjas, Jardin del Valle'
+        ]);
+
+        $student->posts()->create([
+            'title' => 'Primero',
+            'body' => 'Hola a todos'
+        ]);
+
+        $student->posts()->create([
+            'title' => 'Segundo',
+            'body' => 'Como estan?'
         ]);
 
         /*MANY TO MANY
